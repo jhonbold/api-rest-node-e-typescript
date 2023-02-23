@@ -1,12 +1,13 @@
 import express from 'express';
+import {router} from './routes';
 
 const server = express();
 
-//metodos BD: Get (buscar registro), Post (adicionar registro), Put (Atualizar registro), Delete (apagar registro) 
-server.get('/',(_, res) => {
 
-    return res.send ('Olá, Dev! ');
-});
+server.use(express.json());
+
+server.use(router);
+
 
 export {server};
 
